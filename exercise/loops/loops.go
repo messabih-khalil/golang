@@ -22,6 +22,9 @@ func main() {
 			fmt.Println("Buzz")
 		}else if (i % 3 == 0 && i % 5 == 0) {
 			fmt.Println("FizzBuzz")
+		}else {
+			fmt.Println(i)
+
 		}
 	}
 }
