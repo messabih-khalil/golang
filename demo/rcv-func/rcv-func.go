@@ -1,25 +1,28 @@
 package main
 
-// type Person struct{
-// 	age int
-// 	name string
-// 	ageInDays int
-// }
+import "fmt"
 
-// type Peoples struct{
-// 	persons map[string][]Person
-// }
+type Product struct {
+	productName string
+	inStock bool
+}
 
-// // calculate age of person with reciver function
-// func (person * Person) calculateAgeInDays() {
-// 	person.ageInDays = person.age * 365
-// }
+type Store struct{
+	products []Product
+}
 
-// // change name reciver
-// func (person *Person) changeName(otherName string){
-// 	person.name = otherName
-// }
+// receiver function
+func (store * Store) rcvProductInStock(productId int){
+	store.products[productId].inStock = true
+}
+
 
 func main() {
-	
+	store := Store{products: make([]Product, 5)}
+	store.products[0] = Product{
+		productName: "pro1",
+		inStock: false,
+	}
+	store.rcvProductInStock(1)
+	fmt.Println(store)
 }
