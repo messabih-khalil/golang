@@ -5,6 +5,7 @@ import "fmt"
 
 type Player interface{
 	Playing()
+	Pout()
 }
 
 type Footballer string
@@ -13,6 +14,9 @@ type Basketballer string
 
 func (f Footballer) Playing(){
 	fmt.Println("Playing Football")
+}
+func (f Footballer) Pout(){
+	fmt.Println("Playing Pout")
 }
 
 func (b Basketballer) Playing(){
